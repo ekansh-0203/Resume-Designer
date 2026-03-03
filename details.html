@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enter Details</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Detail section:</h1>
+        <h3>Fill your details and your portfolio will ready in few
+            seconds....</h3><hr>
+        <div class="container2">
+            <h1>Enter Your Details</h1><hr>
+
+            <form action="process.php" method="POST"
+                enctype="multipart/form-data">
+                <label for>Name:</label>
+                <input type="text" name="name" placeholder="Full Name"
+                    required id="btn"><br><br>
+                <label for>Profession</label>
+                <input type="text" name="profession" placeholder="Enter work"
+                    required id="btn"><br><br>
+                <label for>About</label>
+                <textarea name="about" placeholder="About You/ career objective"
+                    required id="btn"></textarea><br><br>
+                <label for>Skills:</label>
+                <input type="text" name="skills"
+                    placeholder="Skills (comma separated)" required
+                    id="btn"><br><br>
+                <label for>Projects:</label>
+                <input type="text" name="projects"
+                    placeholder="Projects (comma separated)" required
+                    id="btn"><br><br>
+                <hr>
+                <!-- OPTIONAL FIELDS -->
+                <h4>This Fields are optional</h4>
+                <label for>Education:</label>
+                <input type="text" name="education"
+                    placeholder="Education/college" id="btn"><br><br>
+                <label for>Certifcates:</label>
+                <input type="text" name="certificates"
+                    placeholder="Certificates" id="btn"><br><br>
+
+                <label>Profile Image</label>
+                <input type="file" name="profile_image" id="choose"><br><br>
+
+                <label>Project Image</label>
+                <input type="file" name="project_image" id="choose"><br><br><hr>
+
+                <button type="submit" id="generate">Generate Portfolio</button>
+            </form>
+        </div>
+
+    </body>
+</html>
