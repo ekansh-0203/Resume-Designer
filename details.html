@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Enter Details</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">Detail section:</h1>
+        <h1 class="detail-header">Detail section:</h1>
         <h3>Fill your details and your portfolio will ready in few
             seconds....</h3><hr>
         <div class="container2">
@@ -19,6 +21,8 @@
                 <label for>Profession</label>
                 <input type="text" name="profession" placeholder="Enter work"
                     required id="btn"><br><br>
+                <label>Profile Image</label>
+                <input type="file" name="profile_image" id="choose"><br><br>
                 <label for>About</label>
                 <textarea name="about" placeholder="About You/ career objective"
                     required id="btn"></textarea><br><br>
@@ -26,25 +30,25 @@
                 <input type="text" name="skills"
                     placeholder="Skills (comma separated)" required
                     id="btn"><br><br>
-                <label for>Projects:</label>
+                <hr><label for>Projects:</label>
                 <input type="text" name="projects"
                     placeholder="Projects (comma separated)" required
                     id="btn"><br><br>
+                <label>Project Image</label>
+                <input type="file" name="project_image" id="choose"><br><br>
                 <hr>
                 <!-- OPTIONAL FIELDS -->
                 <h4>This Fields are optional</h4>
                 <label for>Education:</label>
                 <input type="text" name="education"
                     placeholder="Education/college" id="btn"><br><br>
-                <label for>Certifcates:</label>
+                <hr><label for>Certifcates:</label>
                 <input type="text" name="certificates"
                     placeholder="Certificates" id="btn"><br><br>
+                <label for>Certificates Image</label>
+                <input type="file" name="certificate" id="choose"><br><hr>
 
-                <label>Profile Image</label>
-                <input type="file" name="profile_image" id="choose"><br><br>
-
-                <label>Project Image</label>
-                <input type="file" name="project_image" id="choose"><br><br><hr>
+                
 
                 <button type="submit" id="generate">Generate Portfolio</button>
             </form>
