@@ -7,10 +7,11 @@ $skills = isset($_GET['skills']) ? explode(",", $_GET['skills']) : [];
 $projects = isset($_GET['projects']) ? explode(",", $_GET['projects']) : [];
 
 $education = htmlspecialchars($_GET['education'] ?? '');
-$certificates = htmlspecialchars($_GET['certificates'] ?? '');
+$certificates = isset($_GET['certificates']) ? explode(",", $_GET['certificates']) : [];
 
 $profileImage = $_GET['profileImage'] ?? '';
 $projectImage = $_GET['projectImage'] ?? '';
+$certificateImage = $_GET['certificate'] ?? '';
 
 $style = $_GET['style'] ?? 'light';
 ?>
@@ -85,7 +86,16 @@ $style = $_GET['style'] ?? 'light';
     <?php if($certificates != ""): ?>
     <section>
         <h3>Certificates</h3>
-        <p><?php echo $certificates; ?></p>
+        <ul>
+            <?php foreach($certificates as $certificate): ?>
+                <li><?php echo htmlspecialchars(trim($certificate)); ?></li>
+            <?php endforeach; ?>
+        </ul>
+
+        <?php if($certificateImage != ""): ?>
+            <h4>Certifications</h4>
+            <img src="<?php echo $certificateImage; ?>" class="certify">
+        <?php endif; ?>
     </section>
     <?php endif; ?>
 
