@@ -10,6 +10,7 @@ $certificates = $_POST['certificates'];
 
 $profileImagePath = "";
 $project_childrenImagePath = "";
+$certificatesPath = "";
 
 // ===== PROFILE IMAGE =====
 if(isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0){
@@ -28,6 +29,14 @@ if(isset($_FILES['project_image']) && $_FILES['project_image']['error'] == 0){
 
     move_uploaded_file($_FILES["project_image"]["tmp_name"], $projectImagePath);
 }
+//===== CERTIFICATES =====
+if(isset($_FILES['certificate']) && $_FILES['certificate']['error'] == 0){
+
+    $certificateName = time() . "_" . basename($_FILES["certificate"]["name"]);
+    $certificatesPath = "uploads/" . $certificateName;
+
+    move_uploaded_file($_FILES["certificate"]["tmp_name"], $certificatesPath);
+}
 
 header("Location: portfolio.php?" . http_build_query([
     'name' => $name,
@@ -38,7 +47,8 @@ header("Location: portfolio.php?" . http_build_query([
     'education' => $education,
     'certificates' => $certificates,
     'profileImage' => $profileImagePath ?? "",
-    'projectImage' => $projectImagePath ?? ""
+    'projectImage' => $projectImagePath ?? "",
+    'certificate' => $certificatesPath ?? ""
 ]));
 
 exit();
